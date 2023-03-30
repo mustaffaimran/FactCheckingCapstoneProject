@@ -95,15 +95,24 @@ export const footerData = {
   links: [
     {
       title: 'Home',
-      links: [{ text: 'Developer API', href: '#' }],
+      links: [
+        { text: 'Intro', href: '#' },
+
+      ],
     },
     {
-      title: 'Support',
-      links: [{ text: 'Docs', href: '#' }],
+      title: 'How It Works?',
+      links: [
+        { text: 'Guide', href: '#' },
+        { text: 'Examples', href: '#' },
+        { text: 'Additional Resources', href: '#' },
+            ],
     },
     {
       title: 'Company',
-      links: [{ text: 'About', href: 'blog' }],
+      links: [
+        { text: 'About Us', href: 'aboutus' },
+      ],
     },
   ],
 };
