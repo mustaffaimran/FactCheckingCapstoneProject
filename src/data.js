@@ -30,20 +30,22 @@ export const footerData = {
     {
       title: 'Home',
       links: [
-        { text: 'Developer API', href: '#' },
+        { text: 'Intro', href: '#' },
 
       ],
     },
     {
-      title: 'Support',
+      title: 'How It Works?',
       links: [
-        { text: 'Docs', href: '#' },
+        { text: 'Guide', href: '#' },
+        { text: 'Examples', href: '#' },
+        { text: 'Additional Resources', href: '#' },
             ],
     },
     {
       title: 'Company',
       links: [
-        { text: 'About', href: 'blog' },
+        { text: 'About Us', href: 'aboutus' },
       ],
     },
   ],
