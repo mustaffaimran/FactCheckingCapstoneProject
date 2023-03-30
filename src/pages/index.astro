@@ -5,13 +5,8 @@ import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Note from '~/components/widgets/Note.astro';
 import Features from '~/components/widgets/Features.astro';
-import Features2 from '~/components/widgets/Features2.astro';
 import Steps from '~/components/widgets/Steps.astro';
-import Content from '~/components/widgets/Content.astro';
-import LatestPosts from '~/components/blog/LatestPosts.astro';
-import FAQs from '~/components/widgets/FAQs.astro';
-import Stats from '~/components/widgets/Stats.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
+
 
 const meta = {
   title: SITE.title,
@@ -24,7 +19,7 @@ const meta = {
   <!-- Hero Widget ******************* -->
 
   <Hero
-    callToAction={{ text: 'Get Started', href: '#'}}  >
+    callToAction={{ text: 'Get Started',href:'blog'}}  >
     <Fragment slot="title">
       <span class="text-accent dark:text-white highlight"> Fact Checking Central</span> 
     </Fragment>

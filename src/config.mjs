@@ -3,7 +3,7 @@ import defaultImage from './assets/images/default.png';
 const CONFIG = {
   name: 'Fact Checking',
 
-  origin: 'https://astrowind.vercel.app',
+  origin: 'http://localhost:3000/',
   basePathname: '/',
   trailingSlash: false,
 
@@ -29,7 +29,7 @@ const CONFIG = {
 
   blog: {
     disabled: false,
-    postsPerPage: 4,
+    postsPerPage: 5,
 
     post: {
       permalink: '/%slug%', // Variables: %slug%, %year%, %month%, %day%, %hour%, %minute%, %second%, %category%
