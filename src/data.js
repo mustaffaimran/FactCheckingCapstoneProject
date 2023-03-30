@@ -20,7 +20,7 @@ export const headerData = {
     },
     {
       text: 'About Us',
-      href: 'blog',
+      href: 'aboutus',
     },
   ],
 };
