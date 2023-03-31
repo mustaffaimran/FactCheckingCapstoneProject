@@ -1,11 +1,8 @@
----
 import { QuestionsData, Category } from '../../data.js';
 import {useState, useEffect} from 'react';
 
----
 
-
-<!-- function Question(action:number){
+export default function Question(action){
   const [QuestionIndex, GetQuestionIndex]= useState(0);
   const [CurrentQuestion, SetCurrentQuestion] = useState({});
   
@@ -21,8 +18,9 @@ import {useState, useEffect} from 'react';
   }
   
 
-} -->
-
+  
+  
+return (
 <section class="py-8 sm:py-16 lg:py-20 mx-auto">
   <div
     style={{
@@ -46,7 +44,7 @@ import {useState, useEffect} from 'react';
       >
         Question #2
       </h3>
-      <p>Hi</p>
+      <p>{QuestionsData.questions[2].Question}</p>
     </div>
     <div
       style={{ padding:"0",
@@ -84,6 +82,9 @@ import {useState, useEffect} from 'react';
       </div>
     </div>
   </div>
-  <!-- <button onclick={Question(1)}>Next</button>
-  <button onclick={Question(-1)}>Previous</button> -->
+  <button onclick={Question(1)}>Next</button>
+  <button onclick={Question(-1)}>Previous</button>
 </section>
+)
+
+}
