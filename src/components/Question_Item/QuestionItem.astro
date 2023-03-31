@@ -1,6 +1,7 @@
 ---
+import { QuestionsData } from '../../data.js';
+import  useState  from '@astrojs/react';
 ---
-
 <section class="py-8 sm:py-16 lg:py-20 mx-auto">
   <div
     style={{
@@ -18,12 +19,13 @@
       }}
       class="block justify-between flex-col sm:flex-row max-w-3xl mx-auto mt-0 mb-2 px-4 sm:px-6 sm:items-center"
     >
+
       <h3
         class="px-3 sm:px-6 max-w-3xl mx-auto text-4xl md:text-3xl font-bold leading-tighter tracking-tighter font-heading"
       >
-        Question #
+        Question #1
       </h3>
-      <p>Enter Question Here</p>
+      <p>{QuestionsData.questions[2].Question}</p>
     </div>
     <div
       style={{ padding:"0",
