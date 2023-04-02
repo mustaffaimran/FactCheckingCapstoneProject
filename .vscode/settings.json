@@ -12,6 +12,6 @@
   },
   "prettier.documentSelectors": ["**/*.astro"],
   "[astro]": {
-    "editor.defaultFormatter": "ms-vsliveshare.vsliveshare"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }

@@ -7,7 +7,6 @@ import Note from '~/components/widgets/Note.astro';
 import Features from '~/components/widgets/Features.astro';
 import Steps from '~/components/widgets/Steps.astro';
 
-
 const meta = {
   title: SITE.title,
   description: SITE.description,
@@ -18,15 +17,15 @@ const meta = {
 <Layout {meta}>
   <!-- Hero Widget ******************* -->
 
-  <Hero
-    callToAction={{ text: 'Get Started',href:'Question'}}  >
+  <Hero callToAction={{ text: 'Get Started', href: 'Question' }}>
     <Fragment slot="title">
-      <span class="text-accent dark:text-white highlight"> Fact Checking Central</span> 
+      <span class="text-accent dark:text-white highlight"> Fact Checking Central</span>
     </Fragment>
 
     <Fragment slot="subtitle">
       <span class="hidden sm:inline">
-        <span class="font-semibold">Academic Escorts</span> is a free website offering a fact-checking questionnaire to improve users' critical thinking skills and enable them to make informed decisions based on trustworthy online information.</span
+        <span class="font-semibold">Academic Escorts</span> is a free website offering a fact-checking questionnaire to improve
+        users' critical thinking skills and enable them to make informed decisions based on trustworthy online information.</span
       >
     </Fragment>
   </Hero>
@@ -37,7 +36,7 @@ const meta = {
 
   <Features
     highlight="Fact Checking Central"
-    title="Why You Should You The Questionare?"
+    title="Why You Should Use This Questionnaire?"
     subtitle=""
     items={[
       [
@@ -102,8 +101,7 @@ const meta = {
       },
       {
         title: 'Step 3: <span class="font-medium">Answer the Questions</span>',
-        description:
-          'Answer the questions in the questionnaire as honestly and accurately as possible.',
+        description: 'Answer the questions in the questionnaire as honestly and accurately as possible.',
         icon: 'tabler:bulb',
       },
       {
@@ -118,7 +116,7 @@ const meta = {
       },
     ]}
     image={{
-      src: import('~/assets/images/jaredd-craig-HH4WBGNyltc-unsplash.jpg'), 
+      src: import('~/assets/images/jaredd-craig-HH4WBGNyltc-unsplash.jpg'),
       alt: 'Steps image',
     }}
   />
