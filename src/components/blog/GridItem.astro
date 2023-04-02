@@ -22,15 +22,16 @@ const image = await findImage(post.image);
         <a href={getPermalink(post.permalink, 'post')}>
           <Picture
             src={image}
-            class="md:object-fit w-full md:w-auto md:h-full rounded shadow-lg bg-gray-400 dark:bg-slate-700"
+            class=" w-full md:w-auto md:h-full rounded shadow-lg bg-gray-400 dark:bg-slate-700"
             widths={[400, 900]}
             width={400}
             height={224}
             sizes="(max-width: 900px) 400px, 900px"
             alt={post.title}
-            aspectRatio="15:1"
+            // aspectRatio="15:1"
             loading="lazy"
             decoding="async"
+            
           />
         </a>
       )
