@@ -77,8 +77,8 @@ export const QuestionsData = {
       Ans: undefined,
     },
     {
-      Question: 'Q9',
-      Category: 'Is the information presented in a comprehensive manner, covering all relevant aspects of the topic, or are there important details missing?',
+      Question: 'Is the information presented in a comprehensive manner, covering all relevant aspects of the topic, or are there important details missing?',
+      Category: 'Coverage',
       Why: 'If important details are missing, the information may be misleading or inaccurate, which can misinform readers and hinder their ability to make informed decisions. By ensuring that the information is comprehensive, readers can trust the source and have confidence in the accuracy of the information presented.',
       Ans: undefined,
     },
