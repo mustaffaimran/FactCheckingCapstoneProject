@@ -1,6 +1,6 @@
 ---
 title: Humza Aamir
-excerpt: Never gonna give you up Never gonna let you down Never gonna run around and desert you Never gonna make you cry Never gonna say goodbye Never gonna tell a lie and hurt you
+excerpt: I built a fact-checking site to combat misinformation, promote accuracy, and encourage critical thinking.
 image: ~/assets/images/Humza_AamirD.png
 
 
