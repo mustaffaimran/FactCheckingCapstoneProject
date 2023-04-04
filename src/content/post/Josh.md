@@ -1,4 +1,4 @@
 ---
 title: Josh
-excerpt: Created to combat misinformation and disinformation online, and to empower users with the knowledge they need to make informed decisions.
-image: ~/assets/images/Muhammad_Imran.png
+excerpt: Exploring technology on the internet fascinates me, but the abundance of misinformation and varying opinions can be difficult to navigate. To address these issues, I joined a project to aid others in accessing reliable information.
+image: ~/assets/images/Joshuaa.png
