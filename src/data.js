@@ -4,26 +4,13 @@ export const headerData = {
       text: 'Home',
       href: '/',
     },
-    // {
-    //   text: 'How It Works',
-    //   links: [
-    //     {
-    //       text: 'Examples',
-    //       href: '#',
-    //     },
-    //     {
-    //       text: 'List of Questions',
-    //       href: '#',
-    //     },
-    //   ],
-    // },
     {
       text:'Questionnare',
-      href:'Question',
+      href:'/Question',
     },
     {
       text: 'About Us',
-      href: 'aboutus',
+      href: '/aboutus',
     },
   ],
 };
@@ -109,7 +96,7 @@ export const footerData = {
     {
       title: 'Company',
       links: [
-        { text: 'About Us', href: 'aboutus' },
+        { text: 'About Us', href: '/aboutus' },
       ],
     },
   ],
