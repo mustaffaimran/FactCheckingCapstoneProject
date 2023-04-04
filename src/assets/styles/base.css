@@ -3,6 +3,8 @@
 @tailwind utilities;
 
 @layer components {
+  
+
   .text-page {
     color: var(--aw-color-text-page);
   }
