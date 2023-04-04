@@ -5,7 +5,7 @@ export const headerData = {
       href: '/',
     },
     {
-      text:'Questionnare',
+      text:'Questionnaire',
       href:'/Question',
     },
     {
