@@ -1,5 +1,5 @@
 import { QuestionsData } from '../../data.js';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Results from './Results';
 
 export default function Question() {
@@ -17,10 +17,7 @@ export default function Question() {
     setSelectedAnswer(answer);
     setAnswerSelected(true);
     console.log(AllQuestions);
-  }
-
-  async function handleNext() {
-    if ((QuestionIndex !== 7 && answerSelected) || CurrentQuestion.Ans !== undefined) {
+    if ((QuestionIndex !== 7) || CurrentQuestion.Ans !== undefined) {
       if (AllQuestions.questions[QuestionIndex + 1].Ans != null) {
         setSelectedAnswer(AllQuestions.questions[QuestionIndex + 1].Ans);
       } else {
@@ -32,29 +29,18 @@ export default function Question() {
       setProgress((QuestionIndex + 1) / AllQuestions.questions.length);
     }
   }
-
-  async function handlePrev() {
-    if (QuestionIndex !== 0) {
-      await SetCurrentQuestion(QuestionsData.questions[QuestionIndex - 1]);
-      await GetQuestionIndex(QuestionIndex - 1);
-      setProgress((QuestionIndex - 1) / AllQuestions.questions.length);
-      if (AllQuestions.questions[QuestionIndex - 1].Ans != null) {
-        setSelectedAnswer(AllQuestions.questions[QuestionIndex - 1].Ans);
-      } else {
-        setSelectedAnswer(null);
-      }
-    }
-  }
-
+  
   if (QuestionIndex === AllQuestions.questions.length - 1 && answerSelected) {
     return <Results />;
   }
 
   return (
     <section className="py-8 sm:py-16 lg:py-20 mx-auto">
-      <div script={{
-        border: "2px solid black"
-      }}>
+      <div
+        script={{
+          border: '2px solid black',
+        }}
+      >
         <div
           className=""
           style={{
@@ -80,11 +66,11 @@ export default function Question() {
                 margin: '5px',
                 fontWeight: index === QuestionIndex ? 'bold' : 'normal',
                 border: index === QuestionIndex ? '2px solid #48bb78' : 'none',
-                cursor: AllQuestions.questions[index].Ans !== undefined ? 'pointer' : 'not-allowed',
-                opacity: AllQuestions.questions[index].Ans !== undefined ? 1 : 0.5,
+                cursor: AllQuestions.questions[index].Ans !== undefined || (index > 0 && AllQuestions.questions[index - 1].Ans !== undefined) ? 'pointer' : 'not-allowed',
+                opacity: (AllQuestions.questions[index].Ans || (index > 0 && AllQuestions.questions[index - 1].Ans)) !== undefined ? 1 : 0.5,
               }}
               onClick={() => {
-                if (AllQuestions.questions[index].Ans !== undefined) {
+                if (AllQuestions.questions[index].Ans !== undefined ||AllQuestions.questions[index-1].Ans !== undefined ) {
                   GetQuestionIndex(index);
                   SetCurrentQuestion(QuestionsData.questions[index]);
                   setProgress((index + 1) / AllQuestions.questions.length);
@@ -113,7 +99,6 @@ export default function Question() {
                 height: '40px',
                 backgroundColor: 'white',
                 borderRadius: '5px',
-                // borderBottom:'5px solid black',
                 marginTop: '20px',
                 transition: 'width 0.5s ease-in-out',
                 animation: 'pulse 2s ease-out infinite',
@@ -149,9 +134,14 @@ export default function Question() {
           >
             Category : {CurrentQuestion.Category}
           </h4>
-          <p style={{
-            padding: "0 20px"
-          }} key={QuestionIndex}>{CurrentQuestion.Why}</p>
+          <p
+            style={{
+              padding: '0 20px',
+            }}
+            key={QuestionIndex}
+          >
+            {CurrentQuestion.Why}
+          </p>
         </div>
 
         <div
@@ -222,62 +212,6 @@ export default function Question() {
               False
             </div>
           </div>
-        </div>
-
-        <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '20px' }}>
-          <button
-            style={{
-              backgroundColor: 'white',
-              color: 'black',
-              border: 'none',
-              borderRadius: '20px',
-              padding: '10px 20px',
-              marginRight: '10px',
-              marginLeft: '350px',
-              cursor: 'pointer',
-              boxShadow: '0px 8px 15px rgba(0, 0, 0, 0.1)',
-              transition: 'all 0.3s ease',
-            }}
-            onClick={() => {
-              handlePrev();
-            }}
-            onMouseEnter={(e) => {
-              e.target.style.transform = 'translateY(-2px)';
-              e.target.style.boxShadow = '0px 12px 17px rgba(0, 0, 0, 0.2)';
-            }}
-            onMouseLeave={(e) => {
-              e.target.style.transform = 'translateY(0px)';
-              e.target.style.boxShadow = '0px 8px 15px rgba(0, 0, 0, 0.1)';
-            }}
-          >
-            Previous Question
-          </button>
-          <button
-            style={{
-              backgroundColor: 'white',
-              color: 'black',
-              border: 'none',
-              borderRadius: '20px',
-              padding: '10px 20px',
-              cursor: 'pointer',
-              marginRight: '350px',
-              boxShadow: '0px 8px 15px rgba(0, 0, 0, 0.1)',
-              transition: 'all 0.3s ease',
-            }}
-            onClick={() => {
-              handleNext();
-            }}
-            onMouseEnter={(e) => {
-              e.target.style.transform = 'translateY(-2px)';
-              e.target.style.boxShadow = '0px 12px 17px rgba(0, 0, 0, 0.2)';
-            }}
-            onMouseLeave={(e) => {
-              e.target.style.transform = 'translateY(0px)';
-              e.target.style.boxShadow = '0px 8px 15px rgba(0, 0, 0, 0.1)';
-            }}
-          >
-            Next Question
-          </button>
         </div>
       </div>
     </section>
