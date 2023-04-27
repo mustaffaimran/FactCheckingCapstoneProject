@@ -2,8 +2,6 @@ import React from 'react';
 import { QuestionsData } from '../../data.js';
 
 const Result = () => {
-  // let numCorrect = (question[1].Ans == TRUE)--> numCorrect++
-
   let numCorrect = 0;
 
   QuestionsData.questions.forEach((element) => {

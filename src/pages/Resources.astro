@@ -1,0 +1,16 @@
+---
+import Humzaisgay from '~/components/Additional_Resources/Resources.astro';
+import { SITE } from '~/config.mjs';
+import PageLayout from "~/layouts/PageLayout.astro";
+
+
+const meta = {
+  title: SITE.title,
+  description: SITE.description,
+  dontUseTitleTemplate: true,
+};
+---
+
+<PageLayout {meta}>
+<Humzaisgay></Humzaisgay>
+</PageLayout>
