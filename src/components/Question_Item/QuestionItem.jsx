@@ -65,7 +65,7 @@ export default function Question() {
                 alignItems: 'center',
                 margin: '5px',
                 fontWeight: index === QuestionIndex ? 'bold' : 'normal',
-                border: index === QuestionIndex ? '2px solid #48bb78' : 'none',
+                border: index === QuestionIndex ? '4px solid #48bb78' : 'none',
                 cursor: AllQuestions.questions[index].Ans !== undefined || (index > 0 && AllQuestions.questions[index - 1].Ans !== undefined) ? 'pointer' : 'not-allowed',
                 opacity: (AllQuestions.questions[index].Ans || (index > 0 && AllQuestions.questions[index - 1].Ans)) !== undefined ? 1 : 0.5,
               }}
@@ -183,12 +183,12 @@ export default function Question() {
                 color: selectedAnswer === 'true' ? '#3182ce' : 'white',
               }}
               className="mt-0 mb-0 sm:px-6"
-              id="true"
+              id="Yes"
               onClick={(info) => {
                 previewQhandler(info.target.id);
               }}
             >
-              True
+              Yes
             </div>
 
             <div
@@ -204,12 +204,12 @@ export default function Question() {
                 color: selectedAnswer === 'false' ? '#3182ce' : 'white',
               }}
               className="mt-0 mb-0 sm:px-6"
-              id="false"
+              id="No"
               onClick={(info) => {
                 previewQhandler(info.target.id);
               }}
             >
-              False
+              No
             </div>
           </div>
         </div>
