@@ -33,7 +33,6 @@ export default function Question() {
   if (QuestionIndex === AllQuestions.questions.length - 1 && answerSelected) {
     return <Results />;
   }
-
   return (
     <section className="py-8 sm:py-16 lg:py-20 mx-auto">
       <div
@@ -201,7 +200,6 @@ export default function Question() {
             >
               Yes
             </div>
-
             <div
               style={{
                 minWidth: '50%',
