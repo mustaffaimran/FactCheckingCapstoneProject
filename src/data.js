@@ -81,16 +81,16 @@ export const footerData = {
     {
       title: 'Home',
       links: [
-        { text: 'Intro', href: '#' },
+        { text: 'Homepage', href: '/' },
 
       ],
     },
     {
       title: 'How It Works?',
       links: [
-        { text: 'Guide (WIP)', href: '#' },
-        { text: 'Examples(WIP)', href: '#' },
-        { text: 'Additional Resources(WIP)', href: '#' },
+        { text: 'Question List', href: '/QuestionList' },
+        { text: 'How To Use', href: '/HowTo' },
+        { text: 'Additional Resources', href: '/Resources' },
             ],
     },
     {
