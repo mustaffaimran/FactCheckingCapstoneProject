@@ -61,7 +61,7 @@ export default function QuestionList() {
   return (
     <div className="flex flex-col items-center p-4">
       <h2 className="text-2xl font-bold mb-2">Question List</h2>
-      <div style={{ backgroundColor: '', padding: '10px', borderRadius: '5px', }}>
+      <div style={{ backgroundColor: '', padding: '10px', borderRadius: '5px', maxWidth:'1000px'}}>
       {QuestionsData.map((question, index) => (
         <div
         key={index}
