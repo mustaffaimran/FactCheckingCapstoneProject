@@ -1,0 +1,16 @@
+---
+import QuestionList from '~/components/QuestionList/Example/QuesitonList.astro';
+import { BLOG, SITE } from '~/config.mjs';
+import PageLayout from "~/layouts/PageLayout.astro";
+
+const meta = {
+  title: BLOG.title,
+  description: BLOG.description,
+  dontUseTitleTemplate: true,
+};
+
+---
+
+<PageLayout {meta}>
+  <QuestionList></QuestionList>
+</PageLayout>
