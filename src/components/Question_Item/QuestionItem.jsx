@@ -185,12 +185,12 @@ export default function Question() {
                 justifyContent: 'center',
                 cursor: 'pointer',
                 border:
-                  selectedAnswer === 'true' ? '2px solid #3182ce' : '2px solid rgb(30 41 59 / var(--tw-bg-opacity))',
+                  selectedAnswer === 'Yes' ? '2px solid #3182ce' : '2px solid rgb(30 41 59 / var(--tw-bg-opacity))',
                 borderRadius: '100px',
                 padding: '12px',
-                backgroundColor: selectedAnswer === 'true' ? '#f0f4f8' : 'rgb(30 41 59 / var(--tw-bg-opacity))',
-                fontWeight: selectedAnswer === 'true' ? '600' : 'normal',
-                color: selectedAnswer === 'true' ? '#3182ce' : 'white',
+                backgroundColor: selectedAnswer === 'Yes' ? '#f0f4f8' : 'rgb(30 41 59 / var(--tw-bg-opacity))',
+                fontWeight: selectedAnswer === 'Yes' ? '600' : 'normal',
+                color: selectedAnswer === 'Yes' ? '#3182ce' : 'white',
               }}
               className="mt-0 mb-0 sm:px-6"
               id="Yes"
@@ -205,12 +205,12 @@ export default function Question() {
                 minWidth: '50%',
                 justifyContent: 'center',
                 cursor: 'pointer',
-                border: selectedAnswer === 'false' ? '2px solid ' : '2px solid rgb(30 41 59 / var(--tw-bg-opacity))',
+                border: selectedAnswer === 'No' ? '2px solid ' : '2px solid rgb(30 41 59 / var(--tw-bg-opacity))',
                 borderRadius: '100px',
                 padding: '12px',
-                backgroundColor: selectedAnswer === 'false' ? '#f0f4f8' : 'rgb(30 41 59 / var(--tw-bg-opacity))',
-                fontWeight: selectedAnswer === 'false' ? '600' : 'normal',
-                color: selectedAnswer === 'false' ? '#3182ce' : 'white',
+                backgroundColor: selectedAnswer === 'No' ? '#f0f4f8' : 'rgb(30 41 59 / var(--tw-bg-opacity))',
+                fontWeight: selectedAnswer === 'No' ? '600' : 'normal',
+                color: selectedAnswer === 'No' ? '#3182ce' : 'white',
               }}
               className="mt-0 mb-0 sm:px-6"
               id="No"
