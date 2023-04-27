@@ -61,28 +61,23 @@ export default function QuestionList() {
   return (
     <div className="flex flex-col items-center p-4">
       <h2 className="text-2xl font-bold mb-2">Question List</h2>
+      <div style={{ backgroundColor: '', padding: '10px', borderRadius: '5px', }}>
       {QuestionsData.map((question, index) => (
         <div
-          key={index}
-          className="flex flex-col justify-center"
-          style={{
-            backgroundColor: 'rgb(30 41 59 / var(--tw-bg-opacity))',
-            marginBottom: '10px',
-            padding:'15px',
-            borderRadius: '10px',
-            height: '200px',
-            width: '100%',
-            maxWidth: '1200px',
-          }}
-        >
-      <p className="text-lg font-bold mb-2 overflow-hidden" style={{textAlign: 'center'}}>Question: {question.Question}</p>
-          <p className="text-md mb-2 overflow-hidden"style={{textAlign: 'center'}}>Category: {question.Category}</p>
-          <p className="text-md mb-2 overflow-hidden"style={{textAlign: 'center'}}>Why: {question.Why}</p>
-        </div>
+        key={index}
+        style={{
+          backgroundColor: 'rgb(30 41 59 / var(--tw-bg-opacity))',
+          marginBottom: '10px',
+          padding: '10px',
+          borderRadius: '10px',
+        }}
+      >
+        <h3 style={{ fontSize: '1.2em', fontWeight: 'bold', marginBottom: '5px' }}>{question.Question}</h3>
+        <p style={{ fontSize: '1em', marginBottom: '5px' }}>Category: {question.Category}</p>
+        <p style={{ fontSize: '1em', marginBottom: '5px' }}>Why: {question.Why}</p>
+      </div>
       ))}
+    </div>
     </div>
   );
 }
-
-
-
