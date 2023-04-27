@@ -4,9 +4,15 @@ import { QuestionsData } from '../../data.js';
 const Result = () => {
   let numCorrect = 0;
 
-  QuestionsData.questions.forEach((element) => {
-    if (element.Ans == 'true') {
-      numCorrect++;
+  QuestionsData.questions.forEach((element, index) => {
+    if (index === QuestionsData.questions.length-1) {
+      if (element.Ans === 'No') {
+        numCorrect++;
+      }
+    } else {
+      if (element.Ans === 'Yes') {
+        numCorrect++;
+      }
     }
   });
 

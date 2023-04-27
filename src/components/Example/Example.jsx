@@ -1,12 +1,23 @@
-let articlePara1 = `A new study published in the Journal of Nutrition has suggested that consuming small amounts of chocolate may be linked to weight loss. The study was conducted by researchers at a prominent university over a period of six months, and involved a randomized controlled trial of 200 participants.`;
-let articlePara2 = `Half of the participants were instructed to consume a small serving of dark chocolate every day, while the other half were instructed to abstain from consuming chocolate. Both groups were instructed to maintain their normal diet and exercise routines throughout the study period.`;
-let articlePara3 = `At the end of the six months, the group that had consumed chocolate showed an average weight loss of approximately 10 pounds, while the control group showed an average weight loss of approximately 5 pounds. The researchers note that this difference was statistically significant and suggest that the weight loss may be attributed to the flavonoids found in chocolate, which have been shown to have potential metabolic benefits.`;
-let articlePara4 = `Flavonoids are a type of phytonutrient found in plants, including cocoa beans. They are known for their antioxidant properties, and have been shown to have potential health benefits, such as reducing inflammation and improving heart health. In the case of weight loss, flavonoids may help to increase energy expenditure and reduce inflammation, which can contribute to weight gain.`;
-let articlePara5 = `The researchers note that while the study provides some interesting preliminary findings, more research is needed to confirm these results and to determine the optimal dosage and duration of chocolate consumption for weight loss. Additionally, they caution that chocolate should be consumed in moderation, as it is high in calories and excess consumption may lead to weight gain.`;
-let articlePara6 = `It is worth noting that not all chocolate is created equal when it comes to health benefits. Dark chocolate, which contains a higher percentage of cocoa solids than milk chocolate, is generally considered to be healthier due to its higher flavonoid content. Additionally, chocolate that is high in sugar and saturated fat may contribute to weight gain and other health problems.`;
-let articlePara7 = `Overall, the study provides some interesting preliminary findings on the potential benefits of chocolate consumption for weight loss, but more research is needed before any definitive conclusions can be drawn. As always, individuals should consult with their healthcare provider before making any major changes to their diet or exercise routine.`;
+import React, { useState } from 'react';
 
-let questionAnswers = [
+const articleMap = {
+  articlePara1:
+    'A new study published in the Journal of Nutrition has suggested that consuming small amounts of chocolate may be linked to weight loss. The study was conducted by researchers at a prominent university over a period of six months, and involved a randomized controlled trial of 200 participants.',
+  articlePara2:
+    'Half of the participants were instructed to consume a small serving of dark chocolate every day, while the other half were instructed to abstain from consuming chocolate. Both groups were instructed to maintain their normal diet and exercise routines throughout the study period.',
+  articlePara3:
+    'At the end of the six months, the group that had consumed chocolate showed an average weight loss of approximately 10 pounds, while the control group showed an average weight loss of approximately 5 pounds. The researchers note that this difference was statistically significant and suggest that the weight loss may be attributed to the flavonoids found in chocolate, which have been shown to have potential metabolic benefits.',
+  articlePara4:
+    'Flavonoids are a type of phytonutrient found in plants, including cocoa beans. They are known for their antioxidant properties, and have been shown to have potential health benefits, such as reducing inflammation and improving heart health. In the case of weight loss, flavonoids may help to increase energy expenditure and reduce inflammation, which can contribute to weight gain.',
+  articlePara5:
+    'The researchers note that while the study provides some interesting preliminary findings, more research is needed to confirm these results and to determine the optimal dosage and duration of chocolate consumption for weight loss. Additionally, they caution that chocolate should be consumed in moderation, as it is high in calories and excess consumption may lead to weight gain.',
+  articlePara6:
+    'It is worth noting that not all chocolate is created equal when it comes to health benefits. Dark chocolate, which contains a higher percentage of cocoa solids than milk chocolate, is generally considered to be healthier due to its higher flavonoid content. Additionally, chocolate that is high in sugar and saturated fat may contribute to weight gain and other health problems.',
+  articlePara7:
+    'Overall, the study provides some interesting preliminary findings on the potential benefits of chocolate consumption for weight loss, but more research is needed before any definitive conclusions can be drawn. As always, individuals should consult with their healthcare provider before making any major changes to their diet or exercise routine.',
+};
+
+export const QuestionsData = [
   {
     Question: 'Is the source reputable and trustworthy?',
     Category: 'Authority',
@@ -57,91 +68,103 @@ let questionAnswers = [
   },
 ];
 
-export default function Example() {
+export default function App() {
+  const [showQuestions, setShowQuestions] = useState(false);
+  const [showArticle, setShowArticle] = useState(false);
+
+  const toggleQuestions = () => setShowQuestions(!showQuestions);
+  const toggleArticle = () => setShowArticle(!showArticle);
+
+  const questions = QuestionsData.map((question, index) => (
+    <div key={index}>
+      <h3>Question: {question.Question}</h3>
+      <p>Category: {question.Category}</p>
+      <p>Answer: {question.Ans} </p>
+      <p>Why: {question.Why} </p>
+    </div>
+  ));
+
   return (
-    <div>
-      <h1 className="text-3xl font-bold text-center mb-5">What's The Trick To Using This?</h1>
-      <p className="text-center mb-10">Here's a Quick Example</p>
-      <div
+    <div className="container mx-auto py-4">
+      <h1 style={{ display: 'flex', justifyContent: 'center' }} className="text-3xl font-bold mb-4">Assessing the Credibility of a News Article</h1>
+      <p className="mb-4">
+        In this article, we will analyze a news article about the potential benefits of chocolate consumption for weight
+        loss and evaluate its credibility using a set of criteria.
+      </p>
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
+      <h2 style={{ display: 'flex', justifySelf: 'center' }} className="text-2xl font-bold mb-2">
+        Article
+      </h2>
+      <button
         style={{
-          display: 'flex',
-          padding: ' 0 0 0 10px',
+          backgroundColor: '#1E40AF',
+          color: '#FFFFFF',
+          fontWeight: 'bold',
+          padding: '10px',
+          borderRadius: '5px',
+          cursor: 'pointer',
+          marginBottom: '10px',
+          width: '200px',
         }}
+        onClick={toggleArticle}
       >
+        {showArticle ? 'Hide Article' : 'Show Article'}
+      </button>
+
+      {showArticle && (
         <div
           style={{
-            borderBottom: '2px solid black',
-            backgroundColor: 'rgb(30 41 59 / var(--tw-bg-opacity))',
-            textAlign: 'start',
-            borderRadius: '10px',
+            backgroundColor: 'rgb(30 41 59 / var(--tw-bg-opacity))  ',
             padding: '20px',
-            height: 'fit-content',
+            borderRadius: '5px',
+            lineHeight: '1.5',
+            marginBottom: '20px',
           }}
-          className="block justify-between flex-col sm:flex-row max-w-3xl mx-auto mt-0 mb-2 px-4 sm:px-6 sm:items-center"
         >
-          <h2 className="text-3xl font-bold text-center mb-5">
-            Study Finds Possible Link between Chocolate Consumption and Weight Loss
-          </h2>
-          <br />
-          <br />
-          {articlePara1}
-          <br />
-          <br />
-          {articlePara2}
-          <br />
-          <br />
-          {articlePara3}
-          <br />
-          <br />
-          {articlePara4}
-          <br />
-          <br />
-          {articlePara5}
-          <br />
-          <br />
-          {articlePara6}
-          <br />
-          <br />
-          {articlePara7}
-        </div>
-        <div
-          style={{
-            borderBottom: '2px solid black',
-            // backgroundColor: 'rgb(30 41 59 / var(--tw-bg-opacity))',
-            textAlign: 'start',
-            borderRadius: '10px',
-            padding: '20px',
-          }}
-          className="block justify-between flex-col sm:flex-row max-w-3xl mx-auto mt-0 mb-2 px-4 sm:px-6 sm:items-center"
-        >
-          {questionAnswers.map((question) => (
-            <div
-              style={{
-                borderBottom: '2px solid black',
-                backgroundColor: 'rgb(30 41 59 / var(--tw-bg-opacity))',
-                textAlign: 'start',
-                borderRadius: '10px',
-                padding: '20px',
-              }}
-              className="block justify-between flex-col sm:flex-row max-w-3xl mx-auto mt-0 mb-2 px-4 sm:px-6 sm:items-center"
-            >
-              <h3
-                style={{ padding: '0px' }}
-                class="px-1 sm:px-3 max-w-1xl mx-auto text-1xl md:text-2xl font-bold leading-tighter tracking-tighter font-heading"
-              >
-                {question.Question}
-              </h3>
-              <br />
-              <p>
-                <b>Our Answer:</b> {question.Ans}
-              </p>
-              <br />
-              <p>
-                <b>Reason:</b> {question.Why}
-              </p>
-            </div>
+          {Object.values(articleMap).map((paragraph, index) => (
+            <p key={index} style={{ marginBottom: '15px' }}>
+              {paragraph}
+            </p>
           ))}
         </div>
+      )}
+      </div>
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', margin:'20px' }}>
+      <h2 className="text-2xl font-bold mb-2">Our Response Using Our Questionnaire</h2>
+      <button
+        style={{
+          backgroundColor: '#1E40AF',
+          color: '#FFFFFF',
+          fontWeight: 'bold',
+          padding: '10px',
+          borderRadius: '5px',
+          cursor: 'pointer',
+          marginBottom: '10px',
+          width: '200px',
+        }}
+        onClick={toggleQuestions}
+      >
+        {showQuestions ? 'Hide Questions' : 'Show Questions'}
+      </button>
+      <div style={{ backgroundColor: '', padding: '10px', borderRadius: '5px' }}>
+        {showQuestions &&
+          QuestionsData.map((qa, index) => (
+            <div
+              key={index}
+              style={{
+                backgroundColor: 'rgb(30 41 59 / var(--tw-bg-opacity))',
+                marginBottom: '10px',
+                padding: '10px',
+                borderRadius: '10px',
+              }}
+            >
+              <h3 style={{ fontSize: '1.2em', fontWeight: 'bold', marginBottom: '5px' }}>{qa.Question}</h3>
+              <p style={{ fontSize: '1em', marginBottom: '5px' }}>Category: {qa.Category}</p>
+              <p style={{ fontSize: '1em', marginBottom: '5px' }}>Answer: {qa.Ans}</p>
+              <p style={{ fontSize: '1em', marginBottom: '5px' }}>Why: {qa.Why}</p>
+            </div>
+          ))}
+          </div>
       </div>
     </div>
   );
