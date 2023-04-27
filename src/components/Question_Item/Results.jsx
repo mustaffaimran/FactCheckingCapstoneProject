@@ -53,7 +53,7 @@ const Result = () => {
         boxShadow: '0px 0px 10px 0px rgba(0, 0, 0, 0.1)',
       }}
     >
-      <h2 style={{ marginBottom: '30px' }}>Your Results</h2>
+      <h2 style={{ marginBottom: '30px' }} className="text-2xl font-bold mb-2">Your Results</h2>
       <div
         style={{
           display: 'flex',
@@ -62,7 +62,7 @@ const Result = () => {
           marginBottom: '20px',
         }}
       >
-        <h3 style={{ margin: '0' }}>Your Score:</h3>
+        <h3 style={{ margin: '0' }} > <b>Your Score:</b></h3>
         <h3 style={{ margin: '0' }}>
           {numCorrect}/8 ({(numCorrect / 8) * 100}%)
         </h3>
@@ -75,23 +75,23 @@ const Result = () => {
           marginBottom: '20px',
         }}
       >
-        <h3 style={{ margin: '0' }}>Rating:</h3>
+        <h3 style={{ margin: '0' }}> <b>Rating:</b></h3>
         <h3 style={{ margin: '0' }}>{rating}</h3>
       </div>
       <div
         style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
+          display: 'block',
+          // justifyContent: 'space-between',
+          alignItems: 'start',
           marginBottom: '20px',
         }}
       >
-        <h3 style={{ margin: '0' }}>Explanation:</h3>
+        <h3 style={{ margin: '0', textAlign: "start" }}><b>Explanation: </b></h3>
         <h3
           style={{
             margin: '0',
             fontSize: '1rem',
-            paddingLeft: '100px',
+            paddingLeft: '115px',
             textAlign: 'left',
           }}
         >
@@ -106,11 +106,11 @@ const Result = () => {
           marginBottom: '20px',
         }}
       >
-        <h3 style={{ margin: '0' }}>Credibility:</h3>
+        <h3 style={{ margin: '0' }}> <b>Credibility:</b></h3>
         <h3 style={{ margin: '0' }}>{credibility}</h3>
       </div>
       <hr style={{ margin: '50px 0' }} />
-      <h2 style={{ marginBottom: '30px' }}>Question Analysis</h2>
+      <h2 style={{ marginBottom: '30px' }} className="text-2xl font-bold mb-2">Question Analysis</h2>
       {QuestionsData.questions.map((question, index) => (
         <div
           key={index}
@@ -122,7 +122,7 @@ const Result = () => {
             marginBottom: '20px',
           }}
         >
-          <h3 style={{ marginBottom: '10px' }}>Question {index + 1}:</h3>
+          <h3 style={{ marginBottom: '10px' }} >Question {index + 1}:</h3>
           <p style={{ marginBottom: '10px' }}>{question.Question}</p>
           <div
             style={{

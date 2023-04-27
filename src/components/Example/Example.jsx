@@ -86,85 +86,109 @@ export default function App() {
 
   return (
     <div className="container mx-auto py-4">
-      <h1 style={{ display: 'flex', justifyContent: 'center' }} className="text-3xl font-bold mb-4">Assessing the Credibility of a News Article</h1>
+      <h1 style={{ display: 'flex', justifyContent: 'center' }} className="text-3xl font-bold mb-4">
+        Assessing the Credibility of a News Article
+      </h1>
       <p className="mb-4">
         In this article, we will analyze a news article about the potential benefits of chocolate consumption for weight
         loss and evaluate its credibility using a set of criteria.
       </p>
       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
-      <h2 style={{ display: 'flex', justifySelf: 'center' }} className="text-2xl font-bold mb-2">
-        Article
-      </h2>
-      <button
-        style={{
-          backgroundColor: '#1E40AF',
-          color: '#FFFFFF',
-          fontWeight: 'bold',
-          padding: '10px',
-          borderRadius: '5px',
-          cursor: 'pointer',
-          marginBottom: '10px',
-          width: '200px',
-        }}
-        onClick={toggleArticle}
-      >
-        {showArticle ? 'Hide Article' : 'Show Article'}
-      </button>
-
-      {showArticle && (
-        <div
+        <h2 style={{ display: 'flex', justifySelf: 'center' }} className="text-2xl font-bold mb-2">
+          Article
+        </h2>
+        <button
           style={{
-            backgroundColor: 'rgb(30 41 59 / var(--tw-bg-opacity))  ',
-            padding: '20px',
+            backgroundColor: '#1E40AF',
+            color: '#FFFFFF',
+            fontWeight: 'bold',
+            padding: '10px',
             borderRadius: '5px',
-            lineHeight: '1.5',
-            marginBottom: '20px',
+            cursor: 'pointer',
+            marginBottom: '10px',
+            width: '200px',
           }}
+          onClick={toggleArticle}
         >
-          {Object.values(articleMap).map((paragraph, index) => (
-            <p key={index} style={{ marginBottom: '15px' }}>
-              {paragraph}
-            </p>
-          ))}
-        </div>
-      )}
-      </div>
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', margin:'20px' }}>
-      <h2 className="text-2xl font-bold mb-2">Our Response Using Our Questionnaire</h2>
-      <button
-        style={{
-          backgroundColor: '#1E40AF',
-          color: '#FFFFFF',
-          fontWeight: 'bold',
-          padding: '10px',
-          borderRadius: '5px',
-          cursor: 'pointer',
-          marginBottom: '10px',
-          width: '200px',
-        }}
-        onClick={toggleQuestions}
-      >
-        {showQuestions ? 'Hide Questions' : 'Show Questions'}
-      </button>
-      <div style={{ backgroundColor: '', padding: '10px', borderRadius: '5px' }}>
-        {showQuestions &&
-          QuestionsData.map((qa, index) => (
-            <div
-              key={index}
-              style={{
-                backgroundColor: 'rgb(30 41 59 / var(--tw-bg-opacity))',
-                marginBottom: '10px',
-                padding: '10px',
-                borderRadius: '10px',
-              }}
-            >
-              <h3 style={{ fontSize: '1.2em', fontWeight: 'bold', marginBottom: '5px' }}>{qa.Question}</h3>
-              <p style={{ fontSize: '1em', marginBottom: '5px' }}>Category: {qa.Category}</p>
-              <p style={{ fontSize: '1em', marginBottom: '5px' }}>Answer: {qa.Ans}</p>
-              <p style={{ fontSize: '1em', marginBottom: '5px' }}>Why: {qa.Why}</p>
-            </div>
-          ))}
+          {showArticle ? 'Hide Article' : 'Show Article'}
+        </button>
+
+        {showArticle && (
+          <div
+            style={{
+              backgroundColor: 'rgb(30 41 59 / var(--tw-bg-opacity))  ',
+              padding: '40px 20px',
+              borderRadius: '5px',
+              lineHeight: '1.5',
+              marginBottom: '20px',
+            }}
+          >
+            <h1 className="text-3xl font-bold text-center mb-5">
+              Study Finds Possible Link between Chocolate Consumption and Weight Loss
+            </h1>
+            <br />
+            {Object.values(articleMap).map((paragraph, index) => (
+              <p key={index} style={{ marginBottom: '15px' }}>
+                {paragraph}
+              </p>
+            ))}
           </div>
+        )}
+      </div>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          flexDirection: 'column',
+          margin: '20px',
+        }}
+      >
+        <h2 className="text-2xl font-bold mb-2">Our Response Using Our Questionnaire</h2>
+        <button
+          style={{
+            backgroundColor: '#1E40AF',
+            color: '#FFFFFF',
+            fontWeight: 'bold',
+            padding: '10px',
+            borderRadius: '5px',
+            cursor: 'pointer',
+            marginBottom: '10px',
+            width: '200px',
+          }}
+          onClick={toggleQuestions}
+        >
+          {showQuestions ? 'Hide Questions' : 'Show Questions'}
+        </button>
+        <div style={{ backgroundColor: '', padding: '10px', borderRadius: '5px' }}>
+          {showQuestions &&
+            QuestionsData.map((qa, index) => (
+              <div
+                key={index}
+                style={{
+                  backgroundColor: 'rgb(30 41 59 / var(--tw-bg-opacity))',
+                  marginBottom: '10px',
+                  padding: '10px',
+                  borderRadius: '10px',
+                }}
+              >
+                <h3 style={{ fontSize: '1.2em', fontWeight: 'bold', marginBottom: '5px' }}>{qa.Question}</h3>
+                <p style={{ fontSize: '1em', marginBottom: '5px' }}>
+                  {' '}
+                  <b>Category: </b> {qa.Category}
+                </p>
+                <p style={{ fontSize: '1em', marginBottom: '5px' }}>
+                  {' '}
+                  <b>Answer: </b> {qa.Ans}
+                </p>
+                <p style={{ fontSize: '1em', marginBottom: '5px' }}>
+                  {' '}
+                  <b>Why: </b>
+                  {qa.Why}
+                </p>
+              </div>
+            ))}
+        </div>
       </div>
     </div>
   );
