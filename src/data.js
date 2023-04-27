@@ -89,7 +89,7 @@ export const footerData = {
       title: 'How It Works?',
       links: [
         { text: 'Question List', href: '/QuestionList' },
-        { text: 'How To Use', href: '/HowTo' },
+        { text: 'How To Use', href: '/Example' },
         { text: 'Additional Resources', href: '/Resources' },
             ],
     },

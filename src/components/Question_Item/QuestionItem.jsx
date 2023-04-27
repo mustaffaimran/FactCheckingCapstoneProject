@@ -17,7 +17,7 @@ export default function Question() {
     setSelectedAnswer(answer);
     setAnswerSelected(true);
     console.log(AllQuestions);
-    if ((QuestionIndex !== 7) || CurrentQuestion.Ans !== undefined) {
+    if (QuestionIndex !== 7 || CurrentQuestion.Ans !== undefined) {
       if (AllQuestions.questions[QuestionIndex + 1].Ans != null) {
         setSelectedAnswer(AllQuestions.questions[QuestionIndex + 1].Ans);
       } else {
@@ -29,7 +29,7 @@ export default function Question() {
       setProgress((QuestionIndex + 1) / AllQuestions.questions.length);
     }
   }
-  
+
   if (QuestionIndex === AllQuestions.questions.length - 1 && answerSelected) {
     return <Results />;
   }
@@ -66,11 +66,22 @@ export default function Question() {
                 margin: '5px',
                 fontWeight: index === QuestionIndex ? 'bold' : 'normal',
                 border: index === QuestionIndex ? '4px solid #48bb78' : 'none',
-                cursor: AllQuestions.questions[index].Ans !== undefined || (index > 0 && AllQuestions.questions[index - 1].Ans !== undefined) ? 'pointer' : 'not-allowed',
-                opacity: (AllQuestions.questions[index].Ans || (index > 0 && AllQuestions.questions[index - 1].Ans)) !== undefined ? 1 : 0.5,
+                cursor:
+                  AllQuestions.questions[index].Ans !== undefined ||
+                  (index > 0 && AllQuestions.questions[index - 1].Ans !== undefined)
+                    ? 'pointer'
+                    : 'not-allowed',
+                opacity:
+                  (AllQuestions.questions[index].Ans || (index > 0 && AllQuestions.questions[index - 1].Ans)) !==
+                  undefined
+                    ? 1
+                    : 0.5,
               }}
               onClick={() => {
-                if (AllQuestions.questions[index].Ans !== undefined ||AllQuestions.questions[index-1].Ans !== undefined ) {
+                if (
+                  AllQuestions.questions[index].Ans !== undefined ||
+                  AllQuestions.questions[index - 1].Ans !== undefined
+                ) {
                   GetQuestionIndex(index);
                   SetCurrentQuestion(QuestionsData.questions[index]);
                   setProgress((index + 1) / AllQuestions.questions.length);

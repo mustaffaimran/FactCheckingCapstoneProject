@@ -1,0 +1,16 @@
+---
+import Example from '~/components/Example/Example.astro';
+import { BLOG, SITE } from '~/config.mjs';
+import PageLayout from "~/layouts/PageLayout.astro";
+
+const meta = {
+  title: BLOG.title,
+  description: BLOG.description,
+  dontUseTitleTemplate: true,
+};
+
+---
+
+<PageLayout {meta}>
+  <Example></Example>
+</PageLayout>
